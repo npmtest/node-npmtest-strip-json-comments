@@ -1,1 +1,40 @@
-{     "devDependencies": {         "strip-json-comments": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-strip-json-comments",     "homepage": "https://github.com/npmtest/node-npmtest-strip-json-comments",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-strip-json-comments.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [strip-json-comments (v2.0.1)](https://github.com/sindresorhus/strip-json-comments#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-strip-json-comments.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-strip-json-comments) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-strip-json-comments.svg)](https://travis-ci.org/npmtest/node-npmtest-strip-json-comments)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "strip-json-comments": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-strip-json-comments",
+    "keywords": [
+        "coverage",
+        "test",
+        "strip-json-comments"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_strip_json_comments.js",
+    "name": "npmtest-strip-json-comments",
+    "nameAlias": "npmtest_strip_json_comments",
+    "nameOriginal": "npmtest-strip-json-comments",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-strip-json-comments.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
